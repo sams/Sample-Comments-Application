@@ -1,0 +1,4 @@
+config/database.php
+config/core.php
+tmp/
+cake.bat
