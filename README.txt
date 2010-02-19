@@ -18,9 +18,9 @@ git submodule update
 
 2. run migrations for posts, users and comments plugins
 
+cake migration run all -plugin users
 cake migration run all -plugin comments
 cake migration run all -plugin posts
-cake migration run all -plugin users
 
 3. register user
 
