@@ -28,3 +28,5 @@
 		echo $form->end(__d('users', 'Submit', true));
 	?>
 </fieldset>
+
+<?php echo $html->link(__('Register', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'register'));?>
