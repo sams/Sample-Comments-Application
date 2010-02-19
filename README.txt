@@ -11,7 +11,7 @@ The comments plugin will allow you to make any kind of data commentable.
 
 1. add migration and comments plugin as submodules
 
-git submodule add git@codaset.com:cakedc/migrations.git plugins/migration
+git submodule add git@codaset.com:cakedc/migrations.git plugins/migrations
 git submodule add git@github.com:CakeDC/Comments.git plugins/comments
 git submodule init
 git submodule update
