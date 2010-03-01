@@ -7,7 +7,7 @@ Copyright 2009 - 2010, Cake Development Corporation
 
 The comments plugin will allow you to make any kind of data commentable.
 
-== Installation ==
+## Installation
 
 1. add migration and comments plugin as submodules
 
