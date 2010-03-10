@@ -11,7 +11,7 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright 2009 - 2010, Cake Development Corporation (http://cakedc.com)
- * @link      http://github.com/CakeDC/Sample-Tags-Application
+ * @link      http://github.com/CakeDC/Sample-Comments-Application
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
