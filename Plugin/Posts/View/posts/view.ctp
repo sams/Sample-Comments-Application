@@ -19,11 +19,11 @@
 </div>
 
 <div id="comments">
-	<?php $commentWidget->options(array(
+	<?php $this->CommentWidget->options(array(
 		'allowAnonymousComment' => false,
 		'target' => '#comments',
 		'ajaxAction' => 'comments'));?>
-	<?php echo $commentWidget->display();?>
+	<?php echo $this->CommentWidget->display();?>
 </div>
 
 

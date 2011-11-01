@@ -23,7 +23,7 @@
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
-		echo $this->Html->script('/posts/js/jquery');
+		echo $this->Html->script('jquery-1.4.packed');
 		echo $scripts_for_layout;
 	?>
 	<script type="text/javascript" charset="utf-8">
@@ -34,7 +34,7 @@
 	<div id="container">
 		<div id="content">
 			<?php echo $content_for_layout; ?>
-			<?php echo $js->writeBuffer(); ?>	
+			<?php echo $this->Js->writeBuffer(); ?>	
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>

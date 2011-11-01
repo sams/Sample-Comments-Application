@@ -15,7 +15,7 @@
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-class PostsController extends PostsAppController 		{
+class PostsController extends PostsAppController {
 
 	var $name = 'Posts';
 
@@ -34,7 +34,7 @@ class PostsController extends PostsAppController 		{
  */
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->passedArgs['comment_view_type'] = 'threaded';
+		$this->passedArgs['comment_view_type'] = 'tree';
 	}
 		
 	function index() {

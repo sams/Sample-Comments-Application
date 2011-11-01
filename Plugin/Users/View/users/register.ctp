@@ -18,19 +18,19 @@
 <fieldset>
 	<legend><?php echo __d('users', 'Details');?></legend>
 	<?php
-		echo $form->create('User', array('url' => array('action'=>'register')));
-		echo $form->input('username');
-		echo $form->input('email');
-		echo $form->input('passwd', array(
+		echo $this->Form->create('User', array('url' => array('action'=>'register')));
+		echo $this->Form->input('username');
+		echo $this->Form->input('email');
+		echo $this->Form->input('passwd', array(
 					'label' => __d('users', 'Password'),
 					'type' => 'password',
 					'error' => __d('users', 'Must be at least 5 characters long')));
-		echo $form->input('temppassword', array(
+		echo $this->Form->input('temppassword', array(
 					'label' => __d('users', 'Password (confirm)'),
 					'type' => 'password',
 					'error' => __d('users', 'Passwords must match')
 					)
 				);
-		echo $form->end(__d('users', 'Submit'));
+		echo $this->Form->end(__d('users', 'Submit'));
 ?>
 </fieldset>

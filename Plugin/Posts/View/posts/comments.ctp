@@ -15,10 +15,10 @@
  */
 ?>
 <?php 
-	$commentWidget->options(array(
+	$this->CommentWidget->options(array(
 	'allowAnonymousComment' => false,
 	'target' => '#comments',
 	'ajaxAction' => 'comments'));
 
-	echo $this->element('ajax', array('plugin' => 'comments'));
+	echo $this->element('ajax', array(), array('plugin' => 'Comments'));
 ?>

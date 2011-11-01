@@ -95,16 +95,11 @@ class UsersController extends UsersAppController {
  * @access public
  */
 	public function login() {
-		if ($this->Auth->user()) {
-			$this->Session->setFlash(sprintf(__("%s you have successfully logged in"), $this->Auth->user('username')));
-			if (!empty($this->data)) {
-				$data = $this->data[$this->modelClass];
-			}
-
-			if (!empty($data['return_to']) && $data['return_to']) {
-				$this->redirect($data['return_to']);
+		if ($this->request->is('post')) {
+			if ($this->Auth->login()) {
+				return $this->redirect($this->Auth->redirect());
 			} else {
-				$this->redirect($this->Auth->loginRedirect);
+				$this->Session->setFlash(__('Username or password is incorrect'));
 			}
 		}
 
@@ -113,8 +108,10 @@ class UsersController extends UsersAppController {
 		} else {
 			$this->set('return_to', false);
 		}
+		
+		$this->set('title_for_layout', __('Login'));
 	}
-
+	
 /**
  * Common logout action
  *
@@ -123,9 +120,9 @@ class UsersController extends UsersAppController {
  */
 	public function logout() {
 		$this->Session->setFlash(sprintf(__d('users', '%s you have successfully logged out'), $this->Auth->user('username')));
+		$this->Auth->logout();
 		$this->Cookie->destroy();
-		$this->redirect($this->Auth->logout());
+		$this->redirect('/');
 	}
 
 }
-?>

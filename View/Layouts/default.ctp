@@ -36,7 +36,7 @@
 			<?php 
 				echo $content_for_layout; ?>
 		</div>
-		<?php echo $js->writeBuffer(); ?>
+		<?php echo $this->Js->writeBuffer(); ?>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
 </body>

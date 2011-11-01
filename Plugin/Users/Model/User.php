@@ -15,6 +15,8 @@
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
+App::uses('UsersAppModel', 'Users.Model');
+ 
 class User extends UsersAppModel {
 
 /**
@@ -40,7 +42,7 @@ class User extends UsersAppModel {
  * @access public
  */
 	public $actsAs = array(
-		'Comments.Sluggable' => array(
+		'Utils.Sluggable' => array(
 			'label' => 'username'));
 
 /**
@@ -55,7 +57,7 @@ class User extends UsersAppModel {
 
 		$this->set($postData);
 		if ($this->validates()) {
-			App::import('Core', 'Security');
+			App::uses('Security', 'Utility');
 			$postData[$this->alias]['passwd'] = Security::hash($postData[$this->alias]['passwd'], 'sha1', true);
 			$this->create();
 			return $this->save($postData, false);

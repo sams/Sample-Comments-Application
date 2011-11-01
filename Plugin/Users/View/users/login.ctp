@@ -18,15 +18,15 @@
 <fieldset>
 	<legend><?php echo __d('users', 'Login') ?></legend>
 	<?php
-		echo $form->create('User', array(
+		echo $this->Form->create('User', array(
 			'action' => 'login'));
-		echo $form->input('email', array(
+		echo $this->Form->input('email', array(
 			'label' => __d('users', 'Email')));
-		echo $form->input('passwd',  array(
+		echo $this->Form->input('passwd',  array(
 			'label' => __d('users', 'Password')));
-		echo $form->hidden('User.return_to', array('value' => $return_to));
-		echo $form->end(__d('users', 'Submit'));
+		echo $this->Form->hidden('User.return_to', array('value' => $return_to));
+		echo $this->Form->end(__d('users', 'Submit'));
 	?>
 </fieldset>
 
-<?php echo $html->link(__('Register'), array('plugin' => 'users', 'controller' => 'users', 'action' => 'register'));?>
+<?php echo $this->Html->link(__('Register'), array('plugin' => 'users', 'controller' => 'users', 'action' => 'register'));?>
