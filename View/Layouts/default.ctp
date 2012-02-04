@@ -27,7 +27,7 @@
 		echo $scripts_for_layout;
 	?>
 	<script type="text/javascript" charset="utf-8">
-		window.basePath = "<?php echo $this->webroot; ?>";
+		window.basePath = "<?php echo $this->request->webroot; ?>";
 	</script>
 </head>
 <body>

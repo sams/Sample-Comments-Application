@@ -65,7 +65,7 @@ class AppController extends Controller {
 	}
 	
 	public function isRequestedAction() {
-		return array_key_exists('requested', $this->params);
+		return array_key_exists('requested', $this->request->params);
 	}
 	
 	public function isAuthorized() {
