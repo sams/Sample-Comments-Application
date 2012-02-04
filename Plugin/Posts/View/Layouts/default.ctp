@@ -37,7 +37,6 @@
 			<?php echo $this->Js->writeBuffer(); ?>	
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
 
