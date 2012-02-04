@@ -14,7 +14,8 @@
  * @link      http://github.com/CakeDC/Sample-Comments-Application
  * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
+App::uses('AuthComponent', 'Controller/Component');
+App::uses('PostsAppController', 'Posts.Controller');
 class PostsController extends PostsAppController {
 
 	var $name = 'Posts';
@@ -58,7 +59,7 @@ class PostsController extends PostsAppController {
 
 	function add() {
 		$this->set('isAjax', $this->RequestHandler->isAjax());
-		if (!empty($this->data)) {
+		if (!empty($this->request->data)) {
 			$this->Post->create();
 				if ($this->RequestHandler->isAjax()) {
 					$this->Post->save($this->data);
@@ -74,12 +75,12 @@ class PostsController extends PostsAppController {
 	}
 
 	function edit($id = null) {
-		if (!$id && empty($this->data)) {
+		if (!$id && empty($this->request->data)) {
 			$this->Session->setFlash(sprintf(__('Invalid %s'), 'post'));
 			$this->redirect(array('action' => 'index'));
 		}
-		if (!empty($this->data)) {
-			if ($this->Post->save($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->Post->save($this->request->data)) {
 				$this->Session->setFlash(sprintf(__('The %s has been saved'), 'post'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -102,6 +103,10 @@ class PostsController extends PostsAppController {
 		}
 		$this->Session->setFlash(sprintf(__('%s was not deleted'), 'Post'));
 		$this->redirect(array('action' => 'index'));
-	}
+    }
+
+    public function isAuthorized() {
+        return true;
+    }
 }
 ?>
