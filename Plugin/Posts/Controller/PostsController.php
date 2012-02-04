@@ -33,7 +33,8 @@ class PostsController extends PostsAppController {
  * 
  */
 	public function beforeFilter() {
-		parent::beforeFilter();
+        parent::beforeFilter();
+        $this->Auth->allow('index', 'view');
 		$this->passedArgs['comment_view_type'] = 'tree';
 	}
 		
