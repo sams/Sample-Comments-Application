@@ -29,7 +29,7 @@ class AppController extends Controller {
  * @access public
  */
 	public $components = array(
-		'RequestHandler', 'Session', 'Auth'
+		'RequestHandler', 'Session', 'Auth', 'Paginator', 'DebugKit.Toolbar'
 	);
 /**
  * Helpers List
@@ -40,7 +40,8 @@ class AppController extends Controller {
 	public $helpers = array(
 		'Session', 
 		'Html', 
-		'Form', 
+        'Form', 
+        'Paginator', 
 		'Js' => array('Jquery'));
 
 	public function beforeFilter() {
